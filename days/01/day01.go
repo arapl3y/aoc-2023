@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	file, err := os.Open("days/1/input/input.txt")
+	file, err := os.Open("days/01/input/input.txt")
 
 	if err != nil {
 		fmt.Println("Error opening the file.", err)
@@ -63,7 +63,7 @@ outFirst:
 			break
 		} else {
 			for word := range wordMap {
-				//
+				// End index is exclusive
 				if strings.Contains(line[:i+1], word) {
 					nums += wordMap[word]
 					break outFirst
