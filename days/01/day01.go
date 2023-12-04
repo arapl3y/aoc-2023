@@ -4,8 +4,9 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"strconv"
 	"strings"
+
+	"github.com/arapl3y/aoc-23/utils"
 )
 
 func main() {
@@ -58,7 +59,7 @@ outFirst:
 	for i := 0; i < len(line); i++ {
 		strChar := string(line[i])
 
-		if isNumeric(strChar) {
+		if utils.IsNumeric(strChar) {
 			nums += strChar
 			break
 		} else {
@@ -77,7 +78,7 @@ outLast:
 	for i := len(line) - 1; i >= 0; i-- {
 		strChar := string(line[i])
 
-		if isNumeric(strChar) {
+		if utils.IsNumeric(strChar) {
 			nums += strChar
 			break
 		} else {
@@ -90,20 +91,5 @@ outLast:
 		}
 	}
 
-	return convertToInt(nums)
-}
-
-func isNumeric(s string) bool {
-	_, err := strconv.Atoi(s)
-	return err == nil
-}
-
-func convertToInt(s string) int {
-	intChar, err := strconv.Atoi(s)
-
-	if err != nil {
-		panic("could not convert numeric char to integer: " + s)
-	}
-
-	return intChar
+	return utils.ConvertToInt(nums)
 }
