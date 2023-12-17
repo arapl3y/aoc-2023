@@ -59,7 +59,7 @@ outFirst:
 	for i := 0; i < len(line); i++ {
 		strChar := string(line[i])
 
-		if utils.IsNumeric(strChar) {
+		if utils.IsInt(strChar) {
 			nums += strChar
 			break
 		} else {
@@ -78,7 +78,7 @@ outLast:
 	for i := len(line) - 1; i >= 0; i-- {
 		strChar := string(line[i])
 
-		if utils.IsNumeric(strChar) {
+		if utils.IsInt(strChar) {
 			nums += strChar
 			break
 		} else {
